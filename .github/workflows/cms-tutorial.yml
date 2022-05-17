@@ -32,8 +32,8 @@ jobs:
           make curator
       - name: Run the carpenter
         run: |
+          export PYTHONPATH="$PWD/fast_cms_public_tutorial:$PYTHONPATH"
           cd fast_cms_public_tutorial/pipeline
-          export PYTHONPATH="$PWD:$PYTHONPATH"
           make carpenter
       - name: Run the plotter
         run: |
