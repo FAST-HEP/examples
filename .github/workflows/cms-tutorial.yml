@@ -48,6 +48,13 @@ jobs:
             fast_cms_public_tutorial/pipeline/curator
             fast_cms_public_tutorial/pipeline/carpenter
             fast_cms_public_tutorial/pipeline/plotter
+          retention-days: 2
+          if-no-files-found: error
+      - name: Upload profile
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'fast_cms_public_tutorial_profile'
+          path: |
             fast_cms_public_tutorial/pipeline/profile.txt
           retention-days: 2
           if-no-files-found: error
