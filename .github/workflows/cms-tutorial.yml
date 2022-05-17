@@ -44,6 +44,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: 'fast_cms_public_tutorial'
-          path: 'fast_cms_public_tutorial/pipeline/output'
-          target_path: 'fast_cms_public_tutorial/pipeline/output'
+          path: |
+            fast_cms_public_tutorial/pipeline/curator
+            fast_cms_public_tutorial/pipeline/carpenter
+            fast_cms_public_tutorial/pipeline/plotter
+            fast_cms_public_tutorial/pipeline/profile.txt
           retention-days: 2
+          if-no-files-found: error
