@@ -16,8 +16,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: checkout the tutorial repo
-        run:
+        run: |
           git clone https://gitlab.cern.ch/fast-hep/public/fast_cms_public_tutorial.git
+          echo "PYTHONPATH=$PWD/fast_cms_public_tutorial:$PYTHONPATH" >> $GITHUB_ENV
       - name: Install Dependencies
         run: |
           cd fast_cms_public_tutorial
@@ -32,7 +33,7 @@ jobs:
           make curator
       - name: Run the carpenter
         run: |
-          export PYTHONPATH="$PWD/fast_cms_public_tutorial:$PYTHONPATH"
+          echo "PYTHONPATH=${{ env.PYTHONPATH }}"
           cd fast_cms_public_tutorial/pipeline
           make carpenter
       - name: Run the plotter
