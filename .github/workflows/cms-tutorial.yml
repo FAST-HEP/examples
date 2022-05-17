@@ -16,9 +16,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: checkout the tutorial repo
-        uses: actions/checkout@v2
-        with:
-          repository: https://gitlab.cern.ch/fast-hep/public/fast_cms_public_tutorial.git
+        run:
+          git clone https://gitlab.cern.ch/fast-hep/public/fast_cms_public_tutorial.git
       - name: Install Dependencies
         run: |
           cd fast_cms_public_tutorial
