@@ -1,0 +1,42 @@
+on:
+  schedule:
+    - cron: '30 5 * * 1,3'
+
+jobs:
+  run-cms-tutorial:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: checkout the tutorial repo
+        uses: actions/checkout@v2
+        with:
+        with: 
+          repository: https://gitlab.cern.ch/fast-hep/public/fast_cms_public_tutorial.git
+      - name: Install Dependencies
+        run: |
+          cd fast_cms_public_tutorial
+          pip install -r requirements.txt
+      - name: Download input files
+        run: |
+          cd fast_cms_public_tutorial/pipeline
+          make input_files
+      - name: Run the curator
+        run: |
+          cd fast_cms_public_tutorial/pipeline
+          make curator
+      - name: Run the carpenter
+        run: |
+          cd fast_cms_public_tutorial/pipeline
+          make carpenter
+      - name: Run the plotter
+        run: |
+          cd fast_cms_public_tutorial/pipeline
+          make plotter
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'fast_cms_public_tutorial'
+          path: 'fast_cms_public_tutorial/pipeline/output'
+          target_path: 'fast_cms_public_tutorial/pipeline/output'
+          retention-days: 2
