@@ -33,6 +33,7 @@ jobs:
       - name: Run the carpenter
         run: |
           cd fast_cms_public_tutorial/pipeline
+          export PYTHONPATH="$PWD:$PYTHONPATH"
           make carpenter
       - name: Run the plotter
         run: |
