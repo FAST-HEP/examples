@@ -1,0 +1,11 @@
+{
+    "data.root": "https://cernbox.cern.ch/index.php/s/9QU53dsR2AQPxz8/download",
+    "dy.root": "https://cernbox.cern.ch/index.php/s/x4cRGGXNvQ2ZnDy/download",
+    "qcd.root": "https://cernbox.cern.ch/index.php/s/IYznddwu1oX9zpc/download",
+    "single_top.root": "https://cernbox.cern.ch/index.php/s/8cwxZYSAz1QV83w/download",
+    "ttbar.root": "https://cernbox.cern.ch/index.php/s/3s6Haj3SLGqPuAK/download",
+    "wjets.root": "https://cernbox.cern.ch/index.php/s/tGNjygyJFvSs2Dc/download",
+    "ww.root": "https://cernbox.cern.ch/index.php/s/dFaiOi8JJVzCN8L/download",
+    "wz.root": "https://cernbox.cern.ch/index.php/s/W7hNNy47F7D8X80/download",
+    "zz.root": "https://cernbox.cern.ch/index.php/s/CRlo8JP0Htvg4Dm/download"
+}
