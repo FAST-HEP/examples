@@ -1,17 +1,19 @@
 # CMS Level 1 Trigger analysis
 
-To run:
+## To run
 
 ```bash
-fasthep download --json cms/l1t/remote_data.json --destination data/cms/l1t
+EXAMPLE=cms/l1t
+fasthep download --json ${EXAMPLE}/remote_data.json --destination data/${EXAMPLE}
 
 fast_carpenter \
-  --outdir=output/cms/l1t \
-  cms/l1t/cms_l1t_data.yml \
-  cms/l1t/cms_l1t_processing.yml
+  --outdir=output/${EXAMPLE} \
+  ${EXAMPLE}/data.yml \
+  ${EXAMPLE}/processing.yml
 ```
 
 or (via `fast-cli`):
-```
-fasthep carpenter cms/l1t/cms_l1t_data.yml cms/l1t/cms_l1t_processing.yml -o output/cms/l1t
+
+```bash
+fasthep carpenter ${EXAMPLE}/data.yml ${EXAMPLE}/processing.yml -o output/${EXAMPLE}
 ```
