@@ -20,8 +20,11 @@ The corresponding Github actions workflow is available in [.github/workflows/cms
 ## To run
 
 ```bash
+
 EXAMPLE=cms/public_tutorial
 fasthep download --json ${EXAMPLE}/remote_data.json --destination data/${EXAMPLE}
+
+export PYTHONPATH=$PWD/${EXAMPLE}:$PYTHONPATH
 
 fast_carpenter \
   --outdir=output/${EXAMPLE} \
