@@ -29,7 +29,8 @@ export PYTHONPATH=$PWD/${EXAMPLE}:$PYTHONPATH
 fast_carpenter \
   --outdir=output/${EXAMPLE} \
   ${EXAMPLE}/data.yml \
-  ${EXAMPLE}/processing.yml
+  ${EXAMPLE}/processing.yml \
+  --mode=parsl:local
 ```
 
 or (via `fast-cli`):
