@@ -23,7 +23,7 @@ class DiObjectMass():
 
         # Rename the branches so they're easier to work with here
         if self.mask:
-            mask = chunk.tree.array(self.mask)
+            mask = chunk[self.mask]
             px = px[mask]
             py = py[mask]
             pz = pz[mask]
