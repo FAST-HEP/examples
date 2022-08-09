@@ -38,3 +38,10 @@ or (via `fast-cli`):
 ```bash
 fasthep carpenter ${EXAMPLE}/data.yml ${EXAMPLE}/processing.yml -o output/${EXAMPLE}
 ```
+
+
+### Plots
+
+```bash
+fast_plotter -y log -c ${EXAMPLE}/plot_config.yml -o output/${EXAMPLE}/plotter/ output/${EXAMPLE}/tbl_*.csv
+```
