@@ -40,19 +40,19 @@ datasets:
   - name: data
     eventtype: data
     files:
-      - data/cms/public_tutorial/data.root
+      - data/cms/public_tutorial_simple/data.root
     nevents: !!int '469384'
   - name: mc
     nevents: !!int '240601'
     files:
-      - data/cms/public_tutorial/dy.root
-      - data/cms/public_tutorial/qcd.root
-      - data/cms/public_tutorial/single_top.root
-      - data/cms/public_tutorial/ttbar.root
-      - data/cms/public_tutorial/wjets.root
-      - data/cms/public_tutorial/ww.root
-      - data/cms/public_tutorial/wz.root
-      - data/cms/public_tutorial/zz.root
+      - data/cms/public_tutorial_simple/dy.root
+      - data/cms/public_tutorial_simple/qcd.root
+      - data/cms/public_tutorial_simple/single_top.root
+      - data/cms/public_tutorial_simple/ttbar.root
+      - data/cms/public_tutorial_simple/wjets.root
+      - data/cms/public_tutorial_simple/ww.root
+      - data/cms/public_tutorial_simple/wz.root
+      - data/cms/public_tutorial_simple/zz.root
 defaults:
   eventtype: mc
   nfiles: 1
