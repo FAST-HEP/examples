@@ -20,21 +20,11 @@ The corresponding Github actions workflow is available in [.github/workflows/cms
 ## To run
 
 ```bash
-
-EXAMPLE=cms/public_tutorial
+EXAMPLE=cms/public_tutorial_simple
+# download input data
 fasthep download --json ${EXAMPLE}/remote_data.json --destination data/${EXAMPLE}
-
+# make sure extra python modules can be found
 export PYTHONPATH=$PWD/${EXAMPLE}:$PYTHONPATH
 
-fast_carpenter \
-  --outdir=output/${EXAMPLE} \
-  ${EXAMPLE}/data.yml \
-  ${EXAMPLE}/processing.yml \
-  --mode=parsl:local
-```
-
-or (via `fast-cli`):
-
-```bash
-fasthep carpenter ${EXAMPLE}/data.yml ${EXAMPLE}/processing.yml -o output/${EXAMPLE}
+fasthep carpenter ${EXAMPLE}/data.yml ${EXAMPLE}/processing.yml -o output/${EXAMPLE} --backend=local
 ```
